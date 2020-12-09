@@ -1,0 +1,6 @@
+# open a shell inside a container
+docker exec -it <container> /bin/sh
+
+# read logs of a container: https://docs.docker.com/engine/reference/commandline/logs/
+docker logs [--follow|--timestamps|--details|--since|(--tail|-n)|--until] <container>
+
