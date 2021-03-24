@@ -10,5 +10,10 @@ docker network ls
 # show containers running or not by docker-compose
 docker-compose ps
 
-# Useful links
+# https://docs.docker.com/engine/reference/commandline/exec/
+docker exec ...
+
+
+################
+# Useful links #
 https://www.padok.fr/blog/docker-docker-compose-commandes-connaitre
