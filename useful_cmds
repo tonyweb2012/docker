@@ -1,8 +1,4 @@
-# open a shell inside a container
-docker exec -it <container> /bin/sh
-
-# read logs of a container: https://docs.docker.com/engine/reference/commandline/logs/
-docker logs [--follow|--timestamps|--details|--since|(--tail|-n)|--until] <container>
+### Monitoring cmds
 
 # list networks
 docker network ls
@@ -10,10 +6,42 @@ docker network ls
 # show containers running or not by docker-compose
 docker-compose ps
 
-# https://docs.docker.com/engine/reference/commandline/exec/
-docker exec ...
+### Runtime cmds
+
+# open a shell inside a container
+docker exec -it <container> /bin/sh
+
+### Deletion cmds
+Ces commandes permettent de supprimer vos conteneurs et vos images. Vous en aurez probablement besoin pour libérer de l’espace disque.
+
+docker rm <ID>/<NAME>
+
+docker-compose rm
+
+Le docker rm supprime seulement un conteneur alors que docker-compose rm supprime tous les conteneurs démarrés avec une commande docker-compose.
+
+docker rmi <ID>/<NAME>
+
+Docker rmi supprime l’image que vous passez en paramètre et récursivement toutes les images intermédiaires utilisées pour la construire.
+
+### Logs cmds
+# read logs of a container: https://docs.docker.com/engine/reference/commandline/logs/
+docker logs [--follow|--timestamps|--details|--since|(--tail|-n)|--until] <container>
+
++
+Les commandes suivantes sont utiles quand vous devez débugger certains de vos conteneurs (ou, plus souvent, l'application que vous déployez à l’intérieur).
+
+docker logs <ID>/<NAME> (-f --tail <NBLINE>)
+
+Cette commande affiche les logs du container passé en paramètre. Si vous utilisez l’option -f --tail <NBLINE> vous pouvez suivre en live le flux de vos logs (<NBLINE> est le nombre de lignes que vous souhaitez afficher). Gardez à l’esprit de choisir un nombre de lignes que vous serez capable de gérer, pour ne pas être dépassé par vos logs.
+
+docker-compose logs (<ID>/<NAME>)
+
+L’option (<ID>/<NAME>) avec docker-compose logs vous permet de voir les logs d’un conteneur uniquement, au lieu de voir tous les logs. L’astuce ici est que si vous n’utilisez pas l’option -d quand vous utilisez docker run ou docker-compose up vous verrez vos logs directement (mais vous aurez besoin d’arrêter le conteneur pour quitter la vue). Cela peut toujours être utile pour débugger des applications au démarrage.
++
 
 
 ################
 # Useful links #
 https://www.padok.fr/blog/docker-docker-compose-commandes-connaitre
+https://docs.docker.com/engine/reference/commandline/exec/
