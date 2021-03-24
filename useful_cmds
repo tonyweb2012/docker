@@ -4,3 +4,5 @@ docker exec -it <container> /bin/sh
 # read logs of a container: https://docs.docker.com/engine/reference/commandline/logs/
 docker logs [--follow|--timestamps|--details|--since|(--tail|-n)|--until] <container>
 
+# Useful links
+https://www.padok.fr/blog/docker-docker-compose-commandes-connaitre
