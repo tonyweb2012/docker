@@ -16,6 +16,9 @@ Ces commandes permettent de supprimer vos conteneurs et vos images. Vous en aure
 
 docker rm <ID>/<NAME>
 
+# clean up: remove stopped containers, unused networks, dangling images/build cache
+docker system prune
+
 docker-compose rm
 
 Le docker rm supprime seulement un conteneur alors que docker-compose rm supprime tous les conteneurs démarrés avec une commande docker-compose.
