@@ -6,6 +6,10 @@ docker network ls
 # show containers running or not by docker-compose
 docker-compose ps
 
+docker ps
+
+docker images -a
+
 ### Runtime cmds
 
 # open a shell inside a container
