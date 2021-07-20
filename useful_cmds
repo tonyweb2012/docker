@@ -62,3 +62,6 @@ L’option (<ID>/<NAME>) avec docker-compose logs vous permet de voir les logs d
 # Useful links #
 https://www.padok.fr/blog/docker-docker-compose-commandes-connaitre
 https://docs.docker.com/engine/reference/commandline/exec/
+
+# flaviostutz/docker-janitor : This containers performs continuous cleanups on unused Docker resources on the host. 
+https://hub.docker.com/r/flaviostutz/docker-janitor
