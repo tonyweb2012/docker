@@ -10,6 +10,16 @@ docker ps
 
 docker images -a
 
+# You can specify the maximum amount of times Docker will try to restart the container when using the on-failure policy. The default is that Docker will try forever to restart the container. The number of (attempted) restarts for a container can be obtained via docker inspect. For example, to get the number of restarts for container “my-container”;
+
+  $ docker inspect -f "{{ .RestartCount }}" my-container
+  # 2
+
+# Or, to get the last time the container was (re)started;
+
+  $ docker inspect -f "{{ .State.StartedAt }}" my-container
+  # 2015-03-04T23:47:07.691840179Z
+
 ### Runtime cmds
 
 # open a shell inside a container
