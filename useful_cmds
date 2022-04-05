@@ -57,6 +57,10 @@ docker-compose logs (<ID>/<NAME>)
 L’option (<ID>/<NAME>) avec docker-compose logs vous permet de voir les logs d’un conteneur uniquement, au lieu de voir tous les logs. L’astuce ici est que si vous n’utilisez pas l’option -d quand vous utilisez docker run ou docker-compose up vous verrez vos logs directement (mais vous aurez besoin d’arrêter le conteneur pour quitter la vue). Cela peut toujours être utile pour débugger des applications au démarrage.
 +
 
+# In order to copy a file from a container to the host, you can use the command
+
+docker ps # to get the container name
+docker cp <containerId>:/file/path/within/container /host/path/target
 
 ################
 # Useful links #
